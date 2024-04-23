@@ -13,16 +13,15 @@ class Program
         Random randomNumber = new();
         int magicNumber = randomNumber.Next(1, 101);
         Console.WriteLine(magicNumber);
-        
-        Console.WriteLine("Guess a number between 1 and 100: ");
-        guess = int.Parse(Console.ReadLine());
 
-        do
+        while (guess != magicNumber)
         {
+           Console.WriteLine("Guess a number between 1 and 100: ");
+           guess = int.Parse(Console.ReadLine());
            //need some exception handling for accidental text responses like "yes"
            if(magicNumber > guess)
            {
-                Console.WriteLine("Guess higher!");     
+            Console.WriteLine("Guess higher!");     
            }
            else if (magicNumber < guess)
            {
@@ -33,14 +32,9 @@ class Program
             Console.WriteLine("Congratulations! You guessed it!");
             Console.WriteLine("Would you like to play again?");
             response = Console.ReadLine();
-                if (response != "yes")
-                break;
+                if (response == "yes")
+                continue;
            }
-            Console.WriteLine("Would you like to continue playing? ");
-            response = Console.ReadLine();
-        
-        }while(response == "yes");
-        
-                        
+        }
     }
-}
+}    
