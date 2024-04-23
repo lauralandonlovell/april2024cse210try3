@@ -27,14 +27,12 @@ class Program
            {
             Console.WriteLine("Guess lower!");
            }
-           else if (guess == magicNumber)
+           else 
            {
-            Console.WriteLine("Congratulations! You guessed it!");
-            Console.WriteLine("Would you like to play again?");
-            response = Console.ReadLine();
-                if (response == "yes")
-                continue;
+            Console.WriteLine("Congratulations! You guessed it!"); 
            }
+           Console.WriteLine("Would you like to play again?");
+           response = Console.ReadLine();
         }
     }
 }    
